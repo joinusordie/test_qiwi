@@ -16,6 +16,14 @@ func TestGetExchangeRate(t *testing.T) {
 			data:     []string{"currency_rates", "--code=USD", "--date=2022-10-08"},
 			expected: []string{"USD", "Доллар США", "61,2475"},
 		},
+		{
+			data:     []string{"currency_rates", "--code=USD", "--date=2027-10-08"},
+			expected: nil,
+		},
+		{
+			data:     []string{"currency_rates", "--code=D", "--date=2022-10-08"},
+			expected: nil,
+		},
 	}
 	// Act
 	for _, testCase := range testTable {
